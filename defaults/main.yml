@@ -1,0 +1,19 @@
+---
+# Define the version of Apache Karaf to download
+karaf_version: 4.0.5
+
+# Define URL to download Apache Karaf
+karaf_url: http://www.apache.org/dist/karaf/{{ karaf_version }}/apache-karaf-{{ karaf_version }}.tar.gz
+
+java_home: /usr/lib/jvm/java
+
+java_xms: 512
+
+java_xmx: 512
+
+karaf_home: /usr/local/karaf
+
+karaf_user: karaf
+
+# Server name to use in the Apache HTTPD reverse proxy vhost file
+karaf_server_name: "{{ ansible_fqdn }}"
