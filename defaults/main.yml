@@ -14,6 +14,3 @@ java_xmx: 512
 karaf_home: /usr/local/karaf
 
 karaf_user: karaf
-
-# Server name to use in the Apache HTTPD reverse proxy vhost file
-karaf_server_name: "{{ ansible_fqdn }}"
