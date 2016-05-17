@@ -38,14 +38,3 @@
 
 - name: Ensure Karaf service starts at system boot
   service: name=karaf enabled=yes
-
-#- name: Put in place the karaf logroate configuration file
-#  template: src=karaf_logrotate.j2 dest=/etc/logrotate.d/karaf
-
-#- name: Ensure log path exists for the Apache HTTPD reverse proxy
-#  file: path=/var/log/httpd/karaf mode=0755 state=directory
-
-#- name: Put in place the Apache HTTPD reverse proxy vhost configs for karaf
-#  template: src=karaf_revproxy_vhost.j2 dest=/etc/httpd/vhosts.d/karaf.httpd.conf
-#  notify:
-#    - restart httpd
