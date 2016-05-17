@@ -22,7 +22,7 @@
   template: src=karaf_setenv.j2 dest={{ karaf_home }}/bin/setenv
 
 - name: Install the Karaf Service Wrapper feature
-  command: {{ karaf_home }}/bin/shell wrapper:install creates={{ karaf_home }}/etc/karaf-wrapper.conf
+  command: "{{ karaf_home }}/bin/shell wrapper:install" creates={{ karaf_home }}/etc/karaf-wrapper.conf
 
 - name: Put in place the Karaf Service file
   template: src=karaf-service_init.j2 dest={{ karaf_home }}/bin/karaf-service
