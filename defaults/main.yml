@@ -14,3 +14,10 @@ java_xmx: 512
 karaf_home: /usr/local/karaf
 
 karaf_user: karaf
+
+# Define list of Karaf features to be installed
+#karaf_feature_install:
+#  - "feature:repo-add feature_repo1"
+#  - "feature:install feature1"
+#  - "feature:install feature2"
+#  - "feature:install feature3"
