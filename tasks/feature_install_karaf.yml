@@ -1,0 +1,8 @@
+---
+
+- name: Ensure Karaf is running
+  service: name=karaf started=yes
+
+- name: Install Karaf features
+  command: "{{ karaf_home }}/bin/client {{ item }}"
+  with_items: "{{ karaf_feature_install }}"

@@ -1,0 +1,11 @@
+---
+
+- name: Determine if Karaf needs to be installed
+  stat: path=/usr/local/apache-karaf-{{ karaf_version }}.tar.gz
+  register: karaf_path
+
+- include: install_karaf.yml
+  when: karaf_path.stat.exists == False
+
+- include: feature_install_karaf.yml
+  when: karaf_feature_install is defined
