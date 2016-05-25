@@ -1,9 +1,5 @@
 ---
 
-- name: Determine if Karaf needs to be downloaded/unarchived
-  stat: path=/usr/local/apache-karaf-{{ karaf_version }}.tar.gz
-  register: karaf_path
-
 - name: Download Karaf into /usr/local directory
   get_url: url={{ karaf_url }} dest=/usr/local/apache-karaf-{{ karaf_version }}.tar.gz
   when: karaf_path.stat.exists == False
@@ -37,4 +33,4 @@
   file: path=/usr/local/apache-karaf-{{ karaf_version }} owner=karaf group=karaf recurse=yes state=directory
 
 - name: Ensure Karaf service starts at system boot
-  service: name=karaf enabled=yes
+  service: name=karaf enabled=yes started=yes
