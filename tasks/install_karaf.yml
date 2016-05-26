@@ -33,4 +33,4 @@
   file: path=/usr/local/apache-karaf-{{ karaf_version }} owner=karaf group=karaf recurse=yes state=directory
 
 - name: Ensure Karaf service starts at system boot
-  service: name=karaf enabled=yes started=yes
+  service: name=karaf enabled=yes state=started
